@@ -8,7 +8,7 @@
 <body>
 	<h3>Tambah Data Barang</h3>
 
-	<form action="../Controller.php" method="post">
+	<form action="../Controller.php?action=tambah" method="post">
 		<table>
 			<tr>
 				<td>Nama Barang</td>

@@ -8,7 +8,7 @@ $id = $_GET['id'];
 
 <h3>Edit Data Barang</h3>
 
-<form action="../Controller.php?action=update" method="post">
+<form action="../Controller.php?action=Update" method="post">
 	<?php
 	foreach ($db->edit($id) as $d) {
 	?>
@@ -16,7 +16,7 @@ $id = $_GET['id'];
 			<tr>
 				<td>Nama Barang</td>
 				<td>
-					<input type="hidden" name="id" value="<?php echo $d['id'] ?>">
+					<input type="hidden" name="id" value="<?php echo $d['id_barang'] ?>">
 					<input type="text" name="nama_barang" value="<?php echo $d['nama_barang'] ?>">
 				</td>
 			</tr>
@@ -36,10 +36,9 @@ $id = $_GET['id'];
 				<td>Harga</td>
 				<td><input type="text" name="harga" value="<?php echo $d['harga'] ?>"></td>
 			</tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" name="tombol" value="Update"></td>
-			</tr>
+
 		</table>
+
 	<?php } ?>
+	<button type="submit" name="tombol" value="Update">Update</button>
 </form>

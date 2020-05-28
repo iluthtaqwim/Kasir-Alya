@@ -45,22 +45,13 @@ class Model
 		return $hasil;
 	}
 
-	public function update()
+	public function update($id, $nama_barang, $kode_barang, $jenis_barang, $stok, $harga)
 	{
-		$id = $_GET['id'];
-		$nama_barang = $_POST['nama_barang'];
-		$kode_barang = $_POST['kode_barang'];
-		$jenis_barang = $_POST['jenis_barang'];
-		$stok = $_POST['stok'];
-		$harga = $_POST['harga'];
 
 		$sql = "update tbl_barang set nama_barang='$nama_barang', kode_barang='$kode_barang',jenis_barang='$jenis_barang',stok='$stok',harga='$harga' where id_barang='$id'";
-		$query = $this->db->query($sql);
-		if (!$query) {
-			return "Gagal";
-		} else {
-			return "Sukses";
-		}
+		mysqli_query($this->db, $sql);
+
+		header('location:index.php');
 	}
 
 	public function hapus($id)
